@@ -216,12 +216,12 @@
 
     .Navbar p {
         font-weight: 900;
-        color: #000;
+        color: #fff;
         margin-top: -10px;
     }
 
     .Navbar h1 {
-        color: #000;
+        color: #fff;
         margin-top: -20px;
     }
 
@@ -348,7 +348,7 @@
     }
 }
 
-/* Toggle Button Styles */
+
 .toggle-para {
     background: linear-gradient(to right, #19025d, #5b82e5);
     color: #fff; 
@@ -365,7 +365,7 @@
     color: #fff; 
 }
 
-/* Footer Styles */
+
 footer {
     background: linear-gradient(to right, #36236e, #6bbdb7);
     color: white;
