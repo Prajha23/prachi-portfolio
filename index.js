@@ -38,7 +38,7 @@ document.getElementById("contact-form").addEventListener("submit", function(even
         timestamp: new Date().toLocaleString()
     };
 
-    fetch("m002jzswpraxi", {  // 🛑 Yaha apni SheetDB API ka URL paste karo!
+    fetch("https://sheetdb.io/api/v1/m002jzswpraxi", {  // 🛑 Yaha apni SheetDB API ka URL paste karo!
         method: "POST",
         body: JSON.stringify(formData),
         headers: { "Content-Type": "application/json" }
