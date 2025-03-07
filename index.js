@@ -30,11 +30,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault();
-    
-    emailjs.sendForm("service_xxxxxx", "template_xxxxxx", this)
-        .then(function(response) {
-            document.getElementById("form-status").textContent = "Message sent successfully! ✅";
-        }, function(error) {
-            document.getElementById("form-status").textContent = "Error! Please try again. ❌";
-        });
+
+    let formData = {
+        name: this.name.value,
+        email: this.email.value,
+        message: this.message.value,
+        timestamp: new Date().toLocaleString()
+    };
+
+    fetch("m002jzswpraxi", {  // 🛑 Yaha apni SheetDB API ka URL paste karo!
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" }
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("form-status").textContent = "Message stored successfully! ✅";
+        this.reset();
+    })
+    .catch(error => {
+        document.getElementById("form-status").textContent = "Error! Please try again. ❌";
+    });
 });
